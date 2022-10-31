@@ -9,20 +9,20 @@ Solution:
 1) Repurpose existing GCP Oculus Project Compute VM. VM Name = ft   
 	https://console.cloud.google.com/compute/instancesDetail/zones/europe-west2-c/instances/ft?project=meh-oculus&pageState=(%22duration%22:(%22groupValue%22:%22PT1H%22,%22customValue%22:null))
     
-    1.1) Patch to latest OS 
+1.1) Patch to latest OS 
 	    DONE - VERSION="22.04.1 LTS (Jammy Jellyfish)"
 
-    1.2) Install GCSFUSE
+1.2) Install GCSFUSE
 	    DONE - install notes for linux --> https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/installing.md
 
-    1.3) Install lftp 
+1.3) Install lftp 
 	    DONE - apt install lftp 
 
-    1.4) Add new user oculusagent
+1.4) Add new user oculusagent
 	    DONE - 	$ sudo useradd -m oculusagent
 		$ sudo passwd oculusagent (password in GCP Oculus project Secret Manager : oculusagent-bash-password) 
 
-    1.5) Create /home/oculusagent/.lftprc 
+1.5) Create /home/oculusagent/.lftprc 
 	   
 ```   
 set ftps:initial-prot ""
@@ -34,16 +34,16 @@ set ssl:verify-certificate no
 #user oculusagent
 ```
 
-    1.6) Create GCS Bucket (no public access - Europe-west2 London)
+1.6) Create GCS Bucket (no public access - Europe-west2 London)
 	    DONE - 	meh-oculus-datadumps
 		https://console.cloud.google.com/storage/browser/meh-oculus-datadumps;tab=objects?forceOnBucketsSortingFiltering=false&project=meh-oculus&prefix=&forceOnObjectsSortingFiltering=false 
 
-    1.7) Create GCSFUSE Drive Mapping on VM ft
+1.7) Create GCSFUSE Drive Mapping on VM ft
 	    DONE - /home/oculusagent/meh-ftp-sync/meh-oculus-datadumps
 
 	    lftp ftp://oculusagent:$PASSWD@192.168.18.23:21/CDS_2018/Grouper/Output/
 
-    1.8) Create GCP Secret Manager keys. 
+1.8) Create GCP Secret Manager keys. 
 	    DONE - 
 	    $ gcloud secrets versions access latest --secret="oculusagent-ftps-password"
 
