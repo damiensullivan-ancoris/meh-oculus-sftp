@@ -72,7 +72,7 @@ Solution:
 
 	SSH into ft server via GCP Console Link:  
 
-https://ssh.cloud.google.com/v2/ssh/projects/meh-oculus/zones/europe-west2-c/instances/ft?authuser=0&hl=en_GB&projectNumber=366334205566&useAdminProxy=true&troubleshoot4005Enabled=true&troubleshoot255Enabled=true&sshTroubleshootingToolEnabled=true&regional=true
+    https://ssh.cloud.google.com/v2/ssh/projects/meh-oculus/zones/europe-west2-c/instances/ft?authuser=0&hl=en_GB&projectNumber=366334205566&useAdminProxy=true&troubleshoot4005Enabled=true&troubleshoot255Enabled=true&sshTroubleshootingToolEnabled=true&regional=true
 
 	$ su - oculusagent
 	Password: enter password 
