@@ -72,7 +72,7 @@ $ sudo apt install cron
 $ crontab -e
 ```	
 
-## Access oculusagent shell account
+### Access oculusagent shell account
 
 SSH into ft server via GCP Console Link. 
 
@@ -86,7 +86,7 @@ Either GCP Secret Manager or gcloud can be used to obtain password.
 $ gcloud secrets versions access latest --secret="oculusagent-ftps-password"
 ```
 
-## MANUALLY CONNECT TO MEH ftps Server
+### MANUALLY CONNECT TO MEH ftps Server
 
 If you would like to manually connect to ftps within the MEH environment, run the following
 ```
