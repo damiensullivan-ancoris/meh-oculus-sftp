@@ -67,8 +67,8 @@ set ssl:verify-certificate no
     lftp -c "open ftp://$USER:$PASSWD@$FTPSHOST:21; set xfer:clobber on; cd $SOURCEDIR; ls; lcd $DESTDIR; mget *.*; lpwd; bye"
 
 11) Create cron to sync at specific time or frequency
-	$ sudo apt install cron 
-	$ crontab -e  
+	```$ sudo apt install cron 
+	$ crontab -e```  
 
 	
 ## Access oculusagent shell account
@@ -87,7 +87,7 @@ SSH into ft server via GCP Console Link.
 
 ## MANUALLY CONNECT TO MEH ftps Server
 
-If you would like to manually connect to ftps within MEH run the following:
+If you would like to manually connect to ftps within MEH run the following
 
         PASSWD=$(gcloud secrets versions access latest --secret="oculusagent-ftps-password")
         lftp ftp://oculusagent:$PASSWD@192.168.18.23
