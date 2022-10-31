@@ -94,5 +94,6 @@ If you would like to manually connect to ftps within the MEH environment, run th
 PASSWD=$(gcloud secrets versions access latest --secret="oculusagent-ftps-password")
 lftp ftp://oculusagent:$PASSWD@192.168.18.23
 ```
+---
 ## TODO
 >> TODO: GCSFUSE Mapping on host server reboot
