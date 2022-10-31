@@ -6,23 +6,23 @@ Date: 19/10/2022
 Overview: Moorfields Eye Hospital (MEH) Oculus project (Ancoris Data Team) have a requirement to ingest file based data sources from MEH to GCP GCS.  
 
 Solution: 
-1) Repurpose existing GCP Oculus Project Compute VM. VM Name = ft   
+1. Repurpose existing GCP Oculus Project Compute VM. VM Name = ft   
 https://console.cloud.google.com/compute/instancesDetail/zones/europe-west2-c/instances/ft?project=meh-oculus&pageState=(%22duration%22:(%22groupValue%22:%22PT1H%22,%22customValue%22:null))
     
-2) Patch to latest OS 
+2. Patch to latest OS 
 DONE - VERSION="22.04.1 LTS (Jammy Jellyfish)"
 
-3) Install GCSFUSEs
+3. Install GCSFUSEs
 DONE install notes for linux --> https://github.com/GoogleCloudPlatform/gcsfuse/blob/master/docs/installing.md
 
-4) Install lftp 
+4. Install lftp 
 DONE - apt install lftp 
 
-5) Add new user oculusagent
+5. Add new user oculusagent
 DONE - 	$ sudo useradd -m oculusagent
-$ sudo passwd oculusagent (password in GCP Oculus project Secret Manager : oculusagent-bash-password) 
+`$ sudo passwd oculusagent (password in GCP Oculus project Secret Manager : oculusagent-bash-password) `
 
-6) Create /home/oculusagent/.lftprc 
+6. Create /home/oculusagent/.lftprc 
 	   
 ```   
 set ftps:initial-prot ""
@@ -34,15 +34,15 @@ set ssl:verify-certificate no
 #user oculusagent
 ```
 
-7) Create GCS Bucket (no public access - Europe-west2 London)
+7. Create GCS Bucket (no public access - Europe-west2 London)
 DONE - 	meh-oculus-datadumps
 https://console.cloud.google.com/storage/browser/meh-oculus-datadumps;tab=objects?forceOnBucketsSortingFiltering=false&project=meh-oculus&prefix=&forceOnObjectsSortingFiltering=false 
 
-8) Create GCSFUSE Drive Mapping on VM ft
+8. Create GCSFUSE Drive Mapping on VM ft
 DONE - /home/oculusagent/meh-ftp-sync/meh-oculus-datadumps
 lftp ftp://oculusagent:$PASSWD@192.168.18.23:21/CDS_2018/Grouper/Output/
 
-9) Create GCP Secret Manager keys. 
+9. Create GCP Secret Manager keys. 
 DONE - 
 $ gcloud secrets versions access latest --secret="oculusagent-ftps-password"
 $ gcloud secrets list
@@ -50,10 +50,10 @@ NAME                       CREATED              REPLICATION_POLICY  LOCATIONS
 oculusagent-bash-password  2022-10-19T10:02:49  automatic           -
 oculusagent-ftps-password  2022-10-19T10:04:44  automatic           -
 	
-10) Create ftps synch file for CDS_2018/Grouper/Output
-
+10. Create ftps synch file for CDS_2018/Grouper/Output
+```
 $ mkdir -p /home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/CDS_2018/Grouper/Output
-```	
+	
 #!/bin/bash
 USER=oculusagent
 PASSWD=$(gcloud secrets versions access latest --secret="oculusagent-ftps-password")
@@ -65,7 +65,8 @@ DESTDIR=/home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/CDS_2018/Grouper/Ou
 lftp -c "open ftp://$USER:$PASSWD@$FTPSHOST:21; set xfer:clobber on; cd $SOURCEDIR; ls; lcd $DESTDIR; mget *.*; lpwd; bye"
 ```
 
-11) Create cron to sync at specific time or frequency
+11. Create cron to sync at specific time or frequency
+
 ```
 $ sudo apt install cron 
 $ crontab -e
