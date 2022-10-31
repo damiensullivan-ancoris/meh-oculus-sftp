@@ -77,19 +77,19 @@ $ crontab -e
 
 SSH into ft server via GCP Console Link. 
 
-    https://ssh.cloud.google.com/v2/ssh/projects/meh-oculus/zones/europe-west2-c/instances/ft?authuser=0&hl=en_GB&projectNumber=366334205566&useAdminProxy=true&troubleshoot4005Enabled=true&troubleshoot255Enabled=true&sshTroubleshootingToolEnabled=true&regional=true
+https://ssh.cloud.google.com/v2/ssh/projects/meh-oculus/zones/europe-west2-c/instances/ft?authuser=0&hl=en_GB&projectNumber=366334205566&useAdminProxy=true&troubleshoot4005Enabled=true&troubleshoot255Enabled=true&sshTroubleshootingToolEnabled=true&regional=true
+```
+$ su - oculusagent
+Password: enter password 
 
-	$ su - oculusagent
-	Password: enter password 
+Either GCP Secret Manager or gcloud can be used to obtain password. 
 
-    Either GCP Secret Manager or gcloud can be used to obtain password. 
-
-	    $ gcloud secrets versions access latest --secret="oculusagent-ftps-password"
-
+$ gcloud secrets versions access latest --secret="oculusagent-ftps-password"
+```
 
 ## MANUALLY CONNECT TO MEH ftps Server
 
-If you would like to manually connect to ftps within MEH run the following
+If you would like to manually connect to ftps within the MEH environment, run the following
 ```
 PASSWD=$(gcloud secrets versions access latest --secret="oculusagent-ftps-password")
 lftp ftp://oculusagent:$PASSWD@192.168.18.23
