@@ -67,9 +67,10 @@ set ssl:verify-certificate no
     lftp -c "open ftp://$USER:$PASSWD@$FTPSHOST:21; set xfer:clobber on; cd $SOURCEDIR; ls; lcd $DESTDIR; mget *.*; lpwd; bye"
 
 11) Create cron to sync at specific time or frequency
-	```$ sudo apt install cron 
-	$ crontab -e```  
-
+```
+$ sudo apt install cron 
+$ crontab -e
+```
 	
 ## Access oculusagent shell account
 
