@@ -90,10 +90,10 @@ SSH into ft server via GCP Console Link.
 ## MANUALLY CONNECT TO MEH ftps Server
 
 If you would like to manually connect to ftps within MEH run the following
-
-        PASSWD=$(gcloud secrets versions access latest --secret="oculusagent-ftps-password")
-        lftp ftp://oculusagent:$PASSWD@192.168.18.23
-
+```
+PASSWD=$(gcloud secrets versions access latest --secret="oculusagent-ftps-password")
+lftp ftp://oculusagent:$PASSWD@192.168.18.23
+```
 
 ## TODO
 >> TODO: GCSFUSE Mapping on host server reboot
