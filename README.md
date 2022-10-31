@@ -24,15 +24,15 @@ Solution:
 
     1.5) Create /home/oculusagent/.lftprc 
 	   
-		```   
-            set ftps:initial-prot ""
-            set ftp:ssl-force true
-            set ftp:ssl-protect-list true
-            set ftp:ssl-protect-data true
-            set ssl:verify-certificate no
-            #open ftp://192.168.18.23:21
-            #user oculusagent
-        ```
+```   
+set ftps:initial-prot ""
+set ftp:ssl-force true
+set ftp:ssl-protect-list true
+set ftp:ssl-protect-data true
+set ssl:verify-certificate no
+#open ftp://192.168.18.23:21
+#user oculusagent
+```
 
     1.6) Create GCS Bucket (no public access - Europe-west2 London)
 	    DONE - 	meh-oculus-datadumps
