@@ -23,8 +23,8 @@ Solution:
 		$ sudo passwd oculusagent (password in GCP Oculus project Secret Manager : oculusagent-bash-password) 
 
     1.5) Create /home/oculusagent/.lftprc 
-	    ```DONE - 	debug
-		   
+	   
+		```   
             set ftps:initial-prot ""
             set ftp:ssl-force true
             set ftp:ssl-protect-list true
@@ -32,7 +32,7 @@ Solution:
             set ssl:verify-certificate no
             #open ftp://192.168.18.23:21
             #user oculusagent
-        ```s
+        ```
 
     1.6) Create GCS Bucket (no public access - Europe-west2 London)
 	    DONE - 	meh-oculus-datadumps
