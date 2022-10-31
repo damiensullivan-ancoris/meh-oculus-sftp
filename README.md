@@ -54,24 +54,25 @@ set ssl:verify-certificate no
 	
 10) Create ftps synch file for CDS_2018/Grouper/Output
 
-	$ mkdir -p /home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/CDS_2018/Grouper/Output
-	
-    #!/bin/bash
-    USER=oculusagent
-    PASSWD=$(gcloud secrets versions access latest --secret="oculusagent-ftps-password")
-    FTPSHOST=192.168.18.23
-    #SOURCEDIR=CDS_2018/Grouper/Output
-    SOURCEDIR=Temp/djstest
-    DESTDIR=/home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/CDS_2018/Grouper/Output
+$ mkdir -p /home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/CDS_2018/Grouper/Output
+```	
+#!/bin/bash
+USER=oculusagent
+PASSWD=$(gcloud secrets versions access latest --secret="oculusagent-ftps-password")
+FTPSHOST=192.168.18.23
+#SOURCEDIR=CDS_2018/Grouper/Output
+SOURCEDIR=Temp/djstest
+DESTDIR=/home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/CDS_2018/Grouper/Output
 
-    lftp -c "open ftp://$USER:$PASSWD@$FTPSHOST:21; set xfer:clobber on; cd $SOURCEDIR; ls; lcd $DESTDIR; mget *.*; lpwd; bye"
+lftp -c "open ftp://$USER:$PASSWD@$FTPSHOST:21; set xfer:clobber on; cd $SOURCEDIR; ls; lcd $DESTDIR; mget *.*; lpwd; bye"
+```
 
 11) Create cron to sync at specific time or frequency
 ```
 $ sudo apt install cron 
 $ crontab -e
-```
-	
+```	
+
 ## Access oculusagent shell account
 
 SSH into ft server via GCP Console Link. 
