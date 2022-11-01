@@ -65,11 +65,11 @@ DESTDIR=/home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/CDS_2018/Grouper/Ou
 lftp -c "open ftp://$USER:$PASSWD@$FTPSHOST:21; set xfer:clobber on; cd $SOURCEDIR; ls; lcd $DESTDIR; mget *.*; lpwd; bye"
 ```
 
-11. Create cron to sync at specific time or frequency
+11. Create cron to sync at specific time or frequency.
 
 ```
-$ sudo apt install cron 
-$ crontab -e
+    $ sudo apt install cron 
+    $ crontab -e
 ```	
 ---
 ### Access oculusagent shell account
@@ -77,6 +77,7 @@ $ crontab -e
 SSH into ft server via GCP Console Link. 
 
 https://ssh.cloud.google.com/v2/ssh/projects/meh-oculus/zones/europe-west2-c/instances/ft?authuser=0&hl=en_GB&projectNumber=366334205566&useAdminProxy=true&troubleshoot4005Enabled=true&troubleshoot255Enabled=true&sshTroubleshootingToolEnabled=true&regional=true
+
 and use the following commands.
 ```
 $ su - oculusagent
@@ -96,4 +97,5 @@ lftp ftp://oculusagent:$PASSWD@192.168.18.23
 ```
 ---
 ## TODO
->> TODO: GCSFUSE Mapping on host server reboot
+TODO: Remove tf server from scheduled shutdown script
+TODO: GCSFUSE Mapping on host server reboot
