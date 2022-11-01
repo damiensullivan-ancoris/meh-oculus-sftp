@@ -7,7 +7,7 @@ PASSWD=$(gcloud secrets versions access latest --secret="oculusagent-ftps-passwo
 FTPSHOST=192.168.18.23
 
 #MEH Sftp Server Source Folder. 
-SOURCEDIR=/CDS_2018/SUSdownload
+SOURCEDIR=CDS_2018/SUSdownload
 
 #GCP GCS Bucket. 
 DESTDIR=/home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/CDS_2018/SUSdownload
