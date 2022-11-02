@@ -1,1 +1,0 @@
-git add * && git commit -m  " DJS - $(date +%d.%m.%y-%H:%M:%S) edits" && git push
