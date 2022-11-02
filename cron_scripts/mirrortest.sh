@@ -21,6 +21,8 @@ set xfer:clobber on
 mirror -I *.log -I *.txt $SOURCEDIR $DESTDIR
 mirror -I *.dog -I *.dxt $SOURCEDIR $DESTDIR
 mirror -I *.bog -I *.ext $SOURCEDIR $DESTDIR
+mirror -I *.log -I *.txt $SOURCEDIR $DESTDIR
+mirror -I *.log -I *.txt $SOURCEDIR $DESTDIR
 bye
 EOF
 
