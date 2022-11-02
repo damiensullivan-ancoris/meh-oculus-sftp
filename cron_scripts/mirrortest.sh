@@ -18,11 +18,7 @@ DESTDIR=/home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/djstest
 
 lftp -u "$USER","$PASSWD" ftp://$FTPSHOST:21 <<EOF
 set xfer:clobber on
-mirror -I *.log -I *.txt $SOURCEDIR $DESTDIR
-mirror -I *.dog -I *.dxt $SOURCEDIR $DESTDIR
-mirror -I *.bog -I *.ext $SOURCEDIR $DESTDIR
-mirror -I *.log -I *.txt $SOURCEDIR $DESTDIR
-mirror -I *.log -I *.txt $SOURCEDIR $DESTDIR
+mirror -I CDSEDS63_Freeze_* -I CDSEDS63_Flex_* -I CDSEDS63_SinceFriday_* -I CDSEDS63_FiveWeeks_* $SOURCEDIR $DESTDIR
 bye
 EOF
 
