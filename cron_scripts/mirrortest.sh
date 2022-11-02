@@ -14,7 +14,7 @@ DESTDIR=/home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/djstest
 
 lftp -u "$USER","$PASSWD" ftp://$FTPSHOST:21 <<EOF
 set xfer:clobber on
-cd $SOURCDIR
+cd $SOURCEDIR
 pwd
 ls
 lcd $DESTDIR
