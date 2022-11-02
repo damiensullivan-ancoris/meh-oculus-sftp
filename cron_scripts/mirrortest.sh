@@ -20,10 +20,6 @@ ls
 lcd $DESTDIR
 lpwd
 !dir 
-mirror 
---include-glob=*.log 
-$SOURCEDIR
-$DESTDIR
 bye
 EOF
 
