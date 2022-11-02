@@ -17,6 +17,7 @@ set xfer:clobber on
 cd $SOURCEDIR
 ls
 lcd $DESTDIR 
-mget *.* lpwd
+mget *.* 
+lpwd
 bye
 EOF
