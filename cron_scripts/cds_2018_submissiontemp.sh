@@ -16,3 +16,4 @@ lftp -c "open ftp://$USER:$PASSWD@$FTPSHOST:21; set xfer:clobber on; cd $SOURCED
 # mehdwssdt\c$\DataDumps\CDS_2018\SubmissionTemp\CDSEDS63_Freeze_
 # mehdwssdt\c$\DataDumps\CDS_2018\SubmissionTemp\CDSEDS63_Flex_
 # mehdwssdt\c$\DataDumps\CDS_2018\SubmissionTemp\CDSEDS63_SinceFriday_
+# e
