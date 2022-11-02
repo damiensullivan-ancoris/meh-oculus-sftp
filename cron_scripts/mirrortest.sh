@@ -20,6 +20,11 @@ ls
 lcd $DESTDIR
 lpwd
 !dir 
+mirror 
+--include-glob=*.log 
+$SOURCEDIR
+$DESTDIR
+bye
 EOF
 
 # lftp -u "$USER","$PASSWD" ftp://$FTPSHOST:21 <<EOF
