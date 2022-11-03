@@ -97,8 +97,8 @@ lftp ftp://oculusagent:$PASSWD@192.168.18.23
 ```
 ---
 ## TODO
-TODO: Remove tf server from scheduled shutdown script = DONE. 
-TODO: GCSFUSE Mapping on host server reboot = DONE.
+*TODO: Remove tf server from scheduled shutdown script = DONE. 
+*TODO: GCSFUSE Mapping on host server reboot = DONE.
 
 ---
 ## LFTP Man Page
@@ -127,7 +127,8 @@ User: oculusagent Server: ft
 GCSFuse Bucket mapping to GCS in GCP meh-oculus project will automatically start on ft server boot. 
 It is also set to restart=always so in the event of it failing it will attempt to remap automatically. 
 
-To start/stop and check status manually  $ sudo service mount_gcsfuse start/stop/status 
+To start/stop and check status manually  
+`$ sudo service mount_gcsfuse start/stop/status `
 
-Checkout the mount_gcsfuse.service for settings
+Checkout the mount_gcsfuse.service file in this repo for settings
 Normal /etc/systemd/system installation rules apply. 
