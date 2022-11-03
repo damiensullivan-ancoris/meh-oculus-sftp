@@ -13,11 +13,13 @@ SOURCEDIR=Temp/djstest
 # #GCP GCS Bucket. 
 DESTDIR=/home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/djstest
 
+LOG=/home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/mirrortest/mirrortest_$(date '+%d%m%Y%H%m%s').log
+
 echo "--- SYNC STARTS: $(date '+%d-%m-%YT%T.%3N')" 
 
 lftp -u "$USER","$PASSWD" ftp://$FTPSHOST:21 <<EOF 
 set xfer:clobber on
-mirror -r -I *.log -I *.txt $SOURCEDIR $DESTDIR 
+mirror -r -I *.log -I *.txt $SOURCEDIR $DESTDIR --log=$LOG
 bye
 EOF
 
