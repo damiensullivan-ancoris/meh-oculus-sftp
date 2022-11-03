@@ -19,9 +19,3 @@ bye
 EOF
 
 
-# Prefix OUTCDS, APKCDS, ECSCDS
-#lftp -c "open ftp://$USER:$PASSWD@$FTPSHOST:21; set xfer:clobber on; cd $SOURCEDIR; ls; lcd $DESTDIR; mget outcds*.txt ecscds*.xml apkcds*.txt; lpwd; bye"
-
-# NOTES: Grab file names with the prefix OUTCDS, APKCDS, ECSCDS 
-# AND \z.csv,  \z.txt and \z.xml
-
