@@ -12,7 +12,7 @@ SOURCEDIR=HealthEintent
 #GCP GCS Bucket. 
 DESTDIR=/home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/HealthEintent
 
-LOGFILE=$DESTDIR/ftps_log/HealthEintent.log
+LOGFILE=$DESTDIR/HealthEintent.log
 
 lftp -u "$USER","$PASSWD" ftp://$FTPSHOST:21 <<EOF
 set xfer:clobber on
