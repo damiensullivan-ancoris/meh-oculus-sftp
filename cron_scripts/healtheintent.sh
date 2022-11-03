@@ -16,7 +16,7 @@ LOGFILE=$DESTDIR/ftps_log/HealthEintent.log
 
 lftp -u "$USER","$PASSWD" ftp://$FTPSHOST:21 <<EOF
 set xfer:clobber on
-mirror -r -I HCCG_UK_MOOR_COVID_INPATIENT* -I AdmCare_v1o6* -I NCLMDS_BatchSend.bat $SOURCEDIR $DESTDIR --log=
+mirror -r -I HCCG_UK_MOOR_COVID_INPATIENT* -I AdmCare_v1o6* -I NCLMDS_BatchSend.bat $SOURCEDIR $DESTDIR --log=$LOGFILE
 bye
 EOF
 
