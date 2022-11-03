@@ -98,7 +98,7 @@ lftp ftp://oculusagent:$PASSWD@192.168.18.23
 ---
 ## TODO
 TODO: Remove tf server from scheduled shutdown script = DONE. 
-TODO: GCSFUSE Mapping on host server reboot
+TODO: GCSFUSE Mapping on host server reboot = DONE.
 
 ---
 ## LFTP Man Page
@@ -108,7 +108,8 @@ https://lftp.yar.ru/lftp-man.html
 ## CRONTAB 
 User: oculusagent Server: ft
 
-# At minute 0-12 past every 6th hour on every day-of-week from Monday through Friday
+### At minute 0-12 past every 6th hour on every day-of-week from Monday through Friday
+```
 #*/2 * * * *    /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/mirrortest.sh > 2>&1 
 0 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/casenotes_archive.sh > 2>&1 
 2 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/casenotes_landing.sh > 2>&1
@@ -118,3 +119,15 @@ User: oculusagent Server: ft
 10 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/cds_2018_landing.sh > 2>&1
 12 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/cds_2018_susdownload.sh > 2>&1
 14 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/cds_2018_submissiontemp.sh > 2>&1
+```
+
+---
+## Systemd Service 'mount_gcsfuse'
+
+GCSFuse Bucket mapping to GCS in GCP meh-oculus project will automatically start on ft server boot. 
+It is also set to restart=always so in the event of it failing it will attempt to remap automatically. 
+
+To start/stop and check status manually  $ sudo service mount_gcsfuse start/stop/status 
+
+Checkout the mount_gcsfuse.service for settings
+Normal /etc/systemd/system installation rules apply. 
