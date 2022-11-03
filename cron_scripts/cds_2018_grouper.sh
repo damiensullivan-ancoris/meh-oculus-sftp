@@ -16,8 +16,8 @@ lftp -u "$USER","$PASSWD" ftp://$FTPSHOST:21 <<EOF
 set xfer:clobber on
 cd $SOURCEDIR
 ls
-mirror -F zOUTin.csv $SOURCEDIR $DESTDIR
-mirror -F zAPKin.csv $SOURCEDIR $DESTDIR
+mirror -r -I zOUTin.csv $SOURCEDIR $DESTDIR
+mirror -r -I zAPKin.csv $SOURCEDIR $DESTDIR
 bye
 EOF
 
