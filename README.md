@@ -97,8 +97,8 @@ lftp ftp://oculusagent:$PASSWD@192.168.18.23
 ```
 ---
 ## TODO
-*TODO: Remove tf server from scheduled shutdown script = DONE. 
-*TODO: GCSFUSE Mapping on host server reboot = DONE.
+-TODO: Remove tf server from scheduled shutdown script = DONE. 
+-TODO: GCSFUSE Mapping on host server reboot = DONE.
 
 ---
 ## LFTP Man Page
