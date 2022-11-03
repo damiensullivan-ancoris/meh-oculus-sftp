@@ -35,7 +35,7 @@ set ssl:verify-certificate no
 ```
 
 7. Create GCS Bucket (no public access - Europe-west2 London)
-DONE - 	[meh-oculus-datadumps] (https://console.cloud.google.com/storage/browser/meh-oculus-datadumps;tab=objects?forceOnBucketsSortingFiltering=false&project=meh-oculus&prefix=&forceOnObjectsSortingFiltering=false) 
+[meh-oculus-datadumps] (https://console.cloud.google.com/storage/browser/meh-oculus-datadumps;tab=objects?forceOnBucketsSortingFiltering=false&project=meh-oculus&prefix=&forceOnObjectsSortingFiltering=false) 
 
 8. Create GCSFUSE Drive Mapping on VM ft
 DONE - /home/oculusagent/meh-ftp-sync/meh-oculus-datadumps
