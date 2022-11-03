@@ -13,7 +13,7 @@ SOURCEDIR=Temp/djstest
 # #GCP GCS Bucket. 
 DESTDIR=/home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/djstest
 
-LOG=/home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/mirrortest/mirrortest_$(date '+%d%m%Y%H%m%s').log
+LOG=/home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/Logs/mirrortest/mirrortest_$(date '+%d%m%Y%H%m%s').log
 
 echo "--- SYNC STARTS: $(date '+%d-%m-%YT%T.%3N')" 
 
