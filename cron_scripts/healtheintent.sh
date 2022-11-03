@@ -14,9 +14,9 @@ DESTDIR=/home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/HealthEintent
 
 LOGFILE=$DESTDIR/HealthEintent.log
 
-lftp -u "$USER","$PASSWD" ftp://$FTPSHOST:21 <<EOF
+lftp --log=$LOGFILE -u "$USER","$PASSWD" ftp://$FTPSHOST:21 <<EOF
 set xfer:clobber on
-mirror -r -I HCCG_UK_MOOR_COVID_INPATIENT* -I AdmCare_v1o6* -I NCLMDS_BatchSend.bat $SOURCEDIR $DESTDIR --log=$LOGFILE
+mirror -r -I HCCG_UK_MOOR_COVID_INPATIENT* -I AdmCare_v1o6* -I NCLMDS_BatchSend.bat $SOURCEDIR $DESTDIR 
 bye
 EOF
 
