@@ -17,7 +17,7 @@ echo "--- SYNC STARTS: $(date '+%d-%m-%YT%T.%3N')"
 
 lftp -u "$USER","$PASSWD" ftp://$FTPSHOST:21 <<EOF 
 set xfer:clobber on
-mirror -r -v -I *.log -I *.txt $SOURCEDIR $DESTDIR 
+mirror -r -I *.log -I *.txt $SOURCEDIR $DESTDIR 
 bye
 EOF
 
