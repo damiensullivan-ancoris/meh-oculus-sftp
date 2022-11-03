@@ -1,0 +1,8 @@
+[Unit]
+After=network.target
+
+[Service]
+ExecStart=/home/oculusagent/meh-ftps-sync/meh-oculus-sftp/mount_gcsfuse.sh
+
+[Install]
+WantedBy=default.target
