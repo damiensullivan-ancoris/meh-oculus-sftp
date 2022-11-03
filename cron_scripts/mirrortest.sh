@@ -13,9 +13,9 @@ SOURCEDIR=Temp/djstest
 # #GCP GCS Bucket. 
 DESTDIR=/home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/djstest
 
-lftp -u "$USER","$PASSWD" ftp://$FTPSHOST:21 <<EOF
+lftp -u "$USER","$PASSWD" ftp://$FTPSHOST:21 <<EOF >> $DESTDIR/blah.log
 set xfer:clobber on
-mirror -r -v -I *.log -I *.txt $SOURCEDIR $DESTDIR --log=$DESTDIR/blah.log
+mirror -r -v -I *.log -I *.txt $SOURCEDIR $DESTDIR 
 bye
 EOF
 
