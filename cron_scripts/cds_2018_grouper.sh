@@ -14,8 +14,10 @@ DESTDIR=/home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/CDS_2018/Grouper
 
 lftp -u "$USER","$PASSWD" ftp://$FTPSHOST:21 <<EOF
 set xfer:clobber on
-mirror --file=zOUTin.csv $SOURCEDIR $DESTDIR
-mirror --file=zAPKin.csv $SOURCEDIR $DESTDIR
+cd $SOURCEDIR
+ls
+mirror -F zOUTin.csv $SOURCEDIR $DESTDIR
+mirror -F zAPKin.csv $SOURCEDIR $DESTDIR
 bye
 EOF
 
