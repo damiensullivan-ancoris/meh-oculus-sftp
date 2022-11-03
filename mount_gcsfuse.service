@@ -2,7 +2,8 @@
 After=network.target
 
 [Service]
-ExecStart=/home/oculusagent/meh-ftps-sync/meh-oculus-sftp/mount_gcsfuse.sh
+ExecStart=/usr/bin/gcsfuse meh-oculus-datadumps /home/oculusagent/meh-ftps-sync/meh-oculus-datadumps
+ExecStop=/usr/bin/fusermount -u /home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/
 
 [Install]
 WantedBy=default.target
