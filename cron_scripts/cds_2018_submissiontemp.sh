@@ -13,10 +13,25 @@ DESTDIR=/home/oculusagent/meh-ftps-sync/meh-oculus-datadumps/CDS_2018/Submission
 lftp -u "$USER","$PASSWD" ftp://$FTPSHOST:21 <<EOF
 set xfer:clobber on
 mirror -I CDSEDS63_Freeze_* -I CDSEDS63_Flex_* -I CDSEDS63_SinceFriday_* -I CDSEDS63_FiveWeeks_* $SOURCEDIR $DESTDIR
+bye
+EOF
+
+sleep 5
+
+lftp -u "$USER","$PASSWD" ftp://$FTPSHOST:21 <<EOF
+set xfer:clobber on
 mirror -I CDSOUT62_Freeze_* -I CDSOUT62_Flex_* -I CDSOUT62_SinceFriday_* -I CDSOUT62_FiveWeeks_* $SOURCEDIR $DESTDIR
+bye
+EOF
+
+sleep 5
+
+lftp -u "$USER","$PASSWD" ftp://$FTPSHOST:21 <<EOF
+set xfer:clobber on
 mirror -I CDSAPK62_Freeze_* -I CDSAPK62_Flex_* -I CDSAPK62_SinceFriday_* -I CDSAPK62_FiveWeeks_* -I CDSAPK62_HRG_* $SOURCEDIR $DESTDIR
 bye
 EOF
+
 
 # ALTERNATE MGET EVERY TIME APPROACH
 # lftp -c "open ftp://$USER:$PASSWD@$FTPSHOST:21; set xfer:clobber on; cd $SOURCEDIR; ls; lcd $DESTDIR; mget CDSEDS63_Freeze_* CDSEDS63_Flex_* CDSEDS63_SinceFriday_* CDSEDS63_FiveWeeks_* ; lpwd; bye"
