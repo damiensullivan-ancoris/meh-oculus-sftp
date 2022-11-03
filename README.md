@@ -88,6 +88,7 @@ Password: enter password
 $ gcloud secrets versions access latest --secret="oculusagent-ftps-password"
 ```
 --- 
+
 ### MANUALLY CONNECT TO MEH ftps Server
 
 If you would like to manually connect to ftps within the MEH environment, run the following
@@ -95,7 +96,9 @@ If you would like to manually connect to ftps within the MEH environment, run th
 PASSWD=$(gcloud secrets versions access latest --secret="oculusagent-ftps-password")
 lftp ftp://oculusagent:$PASSWD@192.168.18.23
 ```
+
 ---
+
 ## TODO
 - Remove tf server from scheduled shutdown script = DONE. 
 - GCSFUSE Mapping on host server reboot = DONE.
