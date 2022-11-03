@@ -97,8 +97,8 @@ lftp ftp://oculusagent:$PASSWD@192.168.18.23
 ```
 ---
 ## TODO
-- TODO Remove tf server from scheduled shutdown script = DONE. 
-- TODO GCSFUSE Mapping on host server reboot = DONE.
+- Remove tf server from scheduled shutdown script = DONE. 
+- GCSFUSE Mapping on host server reboot = DONE.
 
 ---
 ## LFTP Man Page
@@ -107,6 +107,13 @@ https://lftp.yar.ru/lftp-man.html
 ---
 ## CRONTAB 
 User: oculusagent Server: ft
+To Edit the crontab settings. 
+```
+$su - oculusagent
+password:
+$crontab -e 
+
+```
 
 ### At minute 0-12 past every 6th hour on every day-of-week from Monday through Friday
 ```
