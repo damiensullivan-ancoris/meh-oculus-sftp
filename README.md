@@ -120,15 +120,15 @@ $crontab -e
 
 ### At minute 0-12 past every 6th hour on every day-of-week from Monday through Friday
 ```
-#*/2 * * * *    /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/mirrortest.sh > 2>&1 
-0 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/casenotes_archive.sh > 2>&1 
-2 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/casenotes_landing.sh > 2>&1
-4 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/cds_2018_grouper_output.sh > 2>&1
-6 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/cds_2018_grouper.sh > 2>&1
-8 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/cds_2018_archive.sh > 2>&1
-10 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/cds_2018_landing.sh > 2>&1
-12 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/cds_2018_susdownload.sh > 2>&1
-14 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/cds_2018_submissiontemp.sh > 2>&1
+#*/2 * * * *    /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/mirrortest.sh > /dev/null 2>&1 
+0 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/casenotes_archive.sh > /dev/null 2>&1 
+2 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/casenotes_landing.sh > /dev/null 2>&1
+4 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/cds_2018_grouper_output.sh > /dev/null 2>&1
+6 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/cds_2018_grouper.sh > /dev/null 2>&1
+8 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/cds_2018_archive.sh > /dev/null 2>&1
+10 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/cds_2018_landing.sh > /dev/null 2>&1
+12 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/cds_2018_susdownload.sh > /dev/null 2>&1
+14 */6 * * 1-5   /home/oculusagent/meh-ftps-sync/meh-oculus-sftp/cron_scripts/cds_2018_submissiontemp.sh > /dev/null 2>&1
 ```
 
 ---
